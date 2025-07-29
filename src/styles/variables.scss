@@ -1,58 +1,10 @@
-$main_color_1: #16B2D9;
-$main_color_2: #2E95AE;
-$background_of_date: #397584;
-$link_hover: #1639D9;
-$link_color: #273133;
-
-h3,h4,p{
-    margin: 6px;
-}
-
-h4{
-    background-color: $background_of_date;
-    font-size: 8px;
-    font-weight: 400;
-}
-
-h3 {
-    font-size: 12px;
-    position: relative; // Required for positioning the pop-up
-
-    cursor: pointer; // Changes cursor to indicate interactivity
-  
-    .popup-text {
-      visibility: hidden; // Hide the pop-up by default
-      opacity: 0;
-      width: 200px; // Set a fixed width for the pop-up
-      background-color: $main_color_2; // Use your theme color
-      color: white; // Text color
-      text-align: center;
-      border-radius: 5px;
-      padding: 5px;
-      position: absolute;
-      z-index: 1; // Ensure the pop-up appears above other content
-      bottom: 125%; // Position the pop-up above the <h3>
-      left: 50%;
-      margin-left: -100px; // Center the pop-up
-      transition: opacity 0.3s ease, visibility 0.3s ease; // Smooth transition
-    }
-  
-    &:hover .popup-text {
-      visibility: visible; // Show the pop-up on hover
-      opacity: 1;
-    }
-  
-    &:hover {
-      transform: scale(1.1); // Optional: Enlarges text on hover
-      transition: transform 0.3s ease;
-    }
-  }
-
-h2{
-    font-size: 20px;
-    margin-top: 0px;
-}
-
-p {
-    font-size: 10px;
-}
+$primary-blue: black;
+$primary-yellow: #FFB908;
+$dark-blue: #0E6FA8;
+$light-blue: #5DB4E8;
+$dark-yellow: #E6A500;
+$light-yellow: #FFD24D;
+$black: #000000;
+$white: #FFFFFF;
+$gray-dark: #333333;
+$gray-light: #F5F5F5;

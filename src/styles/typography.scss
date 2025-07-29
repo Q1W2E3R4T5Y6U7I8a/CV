@@ -1,0 +1,56 @@
+@import './variables';
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 6.4rem;
+  color: $primary-blue;
+  text-transform: uppercase;
+  letter-spacing: -0.1rem;
+  
+  @media (min-width: 768px) {
+    font-size: 7.2rem;
+  }
+}
+
+h2 {
+  font-size: 4.8rem;
+  color: $dark-blue;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 4rem;
+
+&::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem; // space below the text
+  left: 0;
+  width: 100%;   // full width of the parent element
+  height: 0.5rem;
+  background: $primary-yellow;
+  border-radius: 1rem;
+}
+
+}
+
+h3 {
+  font-size: 3.6rem;
+  color: $gray-dark;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: 3rem;
+  color: $primary-blue;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 2.5rem;
+  font-size: 2.8rem;
+}

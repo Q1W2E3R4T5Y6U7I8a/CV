@@ -1,0 +1,163 @@
+@import '../variables';
+
+.container_first, 
+.container_second, 
+.container_third, 
+.container_fourth {
+  padding: 4rem;
+  background: $white;
+  border-radius: 1.5rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 0.5rem 1.5rem rgba($black, 0.05);
+  
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    padding: 6rem;
+  }
+}
+
+.container_first {
+  background: linear-gradient(135deg, rgba($light-blue, 0.1), rgba($light-yellow, 0.1));
+}
+
+.container_second {
+  border-top: 0.5rem solid $primary-blue;
+  border-bottom: 0.5rem solid $primary-yellow;
+}
+
+.container_third {
+  background: linear-gradient(135deg, $white, $gray-light);
+}
+
+.container_fourth {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%231691D9" width="50" height="50" x="50"/><rect fill="%23FFB908" width="50" height="50" y="50"/></svg>');
+    opacity: 0.05;
+    z-index: 0;
+  }
+}
+
+
+// ===== CONTENT CONTAINER =====
+.content {
+  background-color: $white;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 3rem rgba($black, 0.1);
+  padding: 8rem 5%;
+  margin: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  @media (min-width: 768px) {
+    padding: 8rem 8%;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 10rem 12.5%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5rem;
+    background: linear-gradient(90deg, $primary-blue, $primary-yellow);
+  }
+
+  &__link {
+    color: $primary-blue;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-bottom: 0.2rem solid transparent;
+
+    &:hover {
+      color: $dark-blue;
+      border-bottom-color: $primary-yellow;
+    }
+  }
+}
+
+.education_img {
+  height: 30px;
+  width: 30px;
+
+  border-radius: 50%;
+}
+
+
+.container_first, 
+.container_second, 
+.container_third, 
+.container_fourth {
+  padding: 4rem;
+  background: $white;
+  border-radius: 1.5rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 0.5rem 1.5rem rgba($black, 0.05);
+  
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    padding: 6rem;
+  }
+}
+
+.container_first {
+  background: linear-gradient(135deg, rgba($light-blue, 0.1), rgba($light-yellow, 0.1));
+}
+
+.container_second {
+  border-top: 0.5rem solid $primary-blue;
+  border-bottom: 0.5rem solid $primary-yellow;
+}
+
+.container_third {
+  background: linear-gradient(135deg, $white, $gray-light);
+}
+
+.container_fourth {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%231691D9" width="50" height="50" x="50"/><rect fill="%23FFB908" width="50" height="50" y="50"/></svg>');
+    opacity: 0.05;
+    z-index: 0;
+  }
+}
+
+.section_container {
+  margin: 6rem 0;
+  padding: 4rem;
+  background: $white;
+  border-radius: 1.5rem;
+  box-shadow: 0 0.5rem 1.5rem rgba($black, 0.05);
+  
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    padding: 6rem;
+  }
+}

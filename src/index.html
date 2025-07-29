@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV Maksym Karashevskyi</title>
-    <link rel="stylesheet" href="./styles/main.scss" />
-    <script src="scripts/main.js" defer></script>
-    <link rel="icon" href="favicon.svg" />
+    
+    <link rel="icon" href="favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/components/cat.js"></script>
+    <script src="scripts/components/language.js"></script>
+    <script src="scripts/components/tracking.js"></script>
+   
+
+    <link rel="stylesheet" href="./styles/main.scss" />
+    <link rel="stylesheet" href="./styles/typography.scss" />
+    <link rel="stylesheet" href="./styles/components/containers.scss" />
+    <link rel="stylesheet" href="./styles/components/header.scss" />
+    <link rel="stylesheet" href="./styles/components/languages.scss" />
+    <link rel="stylesheet" href="./styles/components/projects.scss" />
+    <link rel="stylesheet" href="./styles/components/canvas.scss" />
+
   </head>
 
   <body class="body">
@@ -16,180 +30,410 @@
         <h3 class="change_language_en">EN</h3>
         <h3 class="change_language_fr">FR</h3>
         <h3 class="change_language_ua">UA</h3>
+        <h3 class="change_language_de">DE</h3>
       </div>
 
-      <div class="cat">
-        <img src="/img/cute_cat_no_pupils.png" alt="Cute cat">
-        <div class="eyes">
-          <div class="eye">
-            <div class="pupil"></div>
-          </div>
-          <div class="eye">
-            <div class="pupil"></div>
-          </div>
-        </div>
+      
+      
+<div class="header">
+  <div class="header-content">
+    <h1 data-en="Maksym Karashevskyi" data-fr="Maksym Karashevskyi" data-ua="Максим Карашевський" data-de="Maksym Karashevskyi">Maksym Karashevskyi</h1>
+    
+    <div class="contact-info">
+      <div class="contact-line">
+        <img src="/img/calendar_icon.png" alt="Birthday" class="contact-icon">
+        <span>23.04.2001</span>
+      </div>
+      <div class="contact-line">
+        <img src="/img/phone_icon.svg" alt="Phone" class="contact-icon">
+        <span>+41 78 338 81 35</span>
+      </div>
+      <div class="contact-line">
+        <img src="/img/document_icon.png" alt="Work Permit" class="contact-icon">
+        <span
+          data-en="Valid S work permit"
+          data-fr="Permis de travail S valide"
+          data-ua="Дійсний дозвіл на роботу S"
+          data-de="Gültige S-Arbeitsbewilligung"
+        >Valid S work permit</span>
+      </div>
+      <div class="contact-line">
+        <img src="/img/location_icon.svg" alt="Location" class="contact-icon">
+        <span>Rue du Seyon 25, 2000 Neuchâtel</span>
+      </div>
+      <div class="contact-line">
+        <img src="/img/email_icon.svg" alt="Email" class="contact-icon">
+        <span>maksym.karashevskyi@gmail.com</span>
       </div>
       
-      <div class="header">
-        <h1 data-en="Maksym Karashevskyi" data-fr="Maksym Karashevskyi" data-ua="Максим Карашевський">Maksym Karashevskyi</h1>
-        <img class="mk_image" src="/img/MK_image.jpg">
+
+      <div class="social_media">
+      <a href="https://www.instagram.com/makarkarma/?hl=en">
+        <img class="instagram" src="/img/instagram_logo.webp" alt="Instagram">
+      </a>
+      <a href="https://t.me/makarkarma">
+        <img class="telegram" src="/img/telegram_logo.jfif" alt="Telegram">
+      </a>
+      <a href="https://api.whatsapp.com/qr/5IAOPCL5QMVCA1?autoload=1&app_absent=0">
+        <img class="whatsUp" src="/img/whatsUp_logo.jfif" alt="WhatsApp">
+      </a>
+      <a href="https://github.com/Q1W2E3R4T5Y6U7I8a">
+        <img class="github" src="/img/github_logo.png" alt="GitHub">
+      </a>
+    </div>
+    </div>
+  </div>
+
+  <div class="profile-section">
+    
+    <img class="mk_image" src="/img/MK_image.jpg" alt="Maksym Karashevskyi">
+  </div>
+</div>
+
+
+
+
+
+<h2 data-en="Projects" data-fr="Projets" data-ua="Проекти" data-de="Projekte">Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="carousel-container">
+              <div class="carousel-slide active">
+                <img src="../img/projects/dumy_1.png" alt="Project image" class="carousel-image">
+                <div class="slide-info">
+                  <p data-en="Handled user posts, chatting and personal pages" 
+                    data-fr="Géré les publications utilisateur, le chat et les pages personnelles"
+                    data-ua="Обробка постів користувачів, чатів та персональних сторінок"
+                    data-de="Verwaltung von Benutzerbeiträgen, Chats und persönlichen Seiten">Handled user posts, chatting and personal pages</p>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="../img/projects/dumy_2.png" alt="Project image" class="carousel-image">
+                <div class="slide-info">
+                  <p data-en="Cross-platform, published on Play Market"
+                    data-fr="Multiplateforme, publié sur Play Market"
+                    data-ua="Кросплатформний, опублікований у Play Market"
+                    data-de="Cross-platform, veröffentlicht im Play Market">Cross-platform, published on Play Market</p>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="../img/projects/dumy_5.jpg" alt="Project image" class="carousel-image">
+                <div class="slide-info">
+                  <p data-en="Connected to real bookcrossing community"
+                    data-fr="Connecté à une véritable communauté de bookcrossing"
+                    data-ua="Підключено до справжньої спільноти буккроссингу"
+                    data-de="Verbunden mit einer echten Bookcrossing-Community">Connected to real bookcrossing community</p>
+                </div>
+              </div>
+              <div class="carousel-nav">
+                <div class="nav-dot active"></div>
+                <div class="nav-dot"></div>
+                <div class="nav-dot"></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-title">
+                <h2 data-en="Social media 'Dumy'"
+                    data-fr="Réseau social 'Dumy'"
+                    data-ua="Соціальна мережа 'Dumy'"
+                    data-de="Soziales Netzwerk 'Dumy'">Social media "Dumy"</h2>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-item">React Native</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">Node js</span>
+                <span class="tech-item">Web sockets</span>
+                <span class="tech-item">NoSQL / Firebase</span>
+                <span class="tech-item">SSH server</span>
+              </div>
+              <a href="https://dumy-ochre.vercel.app/" class="project-link" data-en="Visit Project" data-fr="Visiter le projet" data-ua="Відвідати проект" data-de="Projekt besuchen">
+                Visit Project <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Project 3: -->
+          <div class="project-card">
+            <div class="carousel-container">
+              <div class="carousel-slide active">
+                <img src="../img/projects/clean_carpet_2.jpg" alt="Project image" class="carousel-image">
+                <div class="slide-info">
+                  <p data-en="My website of real running business in London"
+                    data-fr="Mon site web pour une entreprise réelle à Londres"
+                    data-ua="Мій вебсайт для реального бізнесу в Лондоні"
+                    data-de="Meine Website für ein reales Unternehmen in London">My website of real running business in London</p>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="../img/projects/clean_carpet_1.jpg" alt="Project image" class="carousel-image">
+                <div class="slide-info">
+                  <p data-en="Tracking forms and users via backend + google sheets"
+                    data-fr="Suivi des formulaires et utilisateurs via backend + Google Sheets"
+                    data-ua="Відстеження форм та користувачів через бекенд + Google таблиці"
+                    data-de="Verfolgung von Formularen und Benutzern über Backend + Google Sheets">Tracking forms and users via backend + google sheets</p>
+                </div>
+              </div>
+              <div class="carousel-nav">
+                <div class="nav-dot active"></div>
+                <div class="nav-dot"></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-title">
+                <h2 data-en="Website for 'Go Clean Carpet'"
+                    data-fr="Site web pour 'Go Clean Carpet'"
+                    data-ua="Вебсайт для 'Go Clean Carpet'"
+                    data-de="Website für 'Go Clean Carpet'">Website for "Go Clean Carpet"</h2>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-item">Payment processing</span>
+                <span class="tech-item">Google cloud/scripts</span>
+                <span class="tech-item">Advanced DNS</span>
+              </div>
+              <a href="https://gocarpetclean.uk/" class="project-link" data-en="Visit Project" data-fr="Visiter le projet" data-ua="Відвідати проект" data-de="Projekt besuchen">
+                Visit Project <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="carousel-container">
+              <div class="carousel-slide active">
+                <img src="/img/projects/forex_1.jpg" alt="Project image" class="carousel-image">
+                <div class="slide-info">
+                  <p data-en="Portfolio Management"
+                    data-fr="Gestion de portefeuille"
+                    data-ua="Управління портфелем"
+                    data-de="Portfoliomanagement">Portfolio Management</p>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="/img/projects/forex_2.jpg" alt="Project image" class="carousel-image">
+                <div class="slide-info">
+                  <p data-en="Analytics of made trades"
+                    data-fr="Analyse des trades effectués"
+                    data-ua="Аналіз здійснених угод"
+                    data-de="Analyse der getätigten Trades">Analytics of made trades</p>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="/img/projects/forex_3.jpg" alt="Project image" class="carousel-image">
+                <div class="slide-info">
+                  <p data-en="EV graph approximation"
+                    data-fr="Approximation graphique EV"
+                    data-ua="Апроксимація графіка EV"
+                    data-de="EV-Graph-Approximation">EV graph approximation</p>
+                </div>
+                </div>
+              <div class="carousel-nav">
+                <div class="nav-dot active"></div>
+                <div class="nav-dot"></div>
+                <div class="nav-dot"></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-title">
+                <h2 data-en="Forex Analytics Platform"
+                    data-fr="Plateforme d'analyse Forex"
+                    data-ua="Платформа аналітики Forex"
+                    data-de="Forex-Analyseplattform">Forex Analytics Platform</h2>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-item">Data Visualization</span>
+                <span class="tech-item">CSV Processing</span>
+              </div>
+              <a href="https://forextheoryofpossibilities.vercel.app/" class="project-link" data-en="Visit Project" data-fr="Visiter le projet" data-ua="Відвідати проект" data-de="Projekt besuchen">
+                Visit Project <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="carousel-container">
+              <div class="carousel-slide active">
+                <img src="../img/projects//dumy_finance_1.jpg" alt="Budget overview screen" class="carousel-image" />
+                <div class="slide-info">
+                  <p data-en="Track daily expenses, incomes, and budgets in real-time"
+                    data-fr="Suivi des dépenses, revenus et budgets en temps réel"
+                    data-ua="Відстеження витрат, доходів та бюджетів у реальному часі"
+                    data-de="Echtzeit-Verfolgung von täglichen Ausgaben, Einnahmen und Budgets">Track daily expenses, incomes, and budgets in real-time</p>
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <img src="../img/projects/dumy_finance_2.jpg" alt="Statistics page" class="carousel-image" />
+                <div class="slide-info">
+                  <p data-en="Visual analytics with monthly breakdowns and charts"
+                    data-fr="Analytique visuelle avec répartition mensuelle et graphiques"
+                    data-ua="Візуальна аналітика з щомісячною розбивкою та діаграмами"
+                    data-de="Visuelle Analysen mit monatlichen Aufschlüsselungen und Diagrammen">Visual analytics with monthly breakdowns and charts</p>
+                </div>
+              </div>
+              <div class="carousel-nav">
+                <div class="nav-dot active"></div>
+                <div class="nav-dot"></div>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-title">
+                <h2 data-en="Finance Management App"
+                    data-fr="Application de gestion financière"
+                    data-ua="Додаток для управління фінансами"
+                    data-de="Finanzverwaltungs-App">Finance Management App</h2>
+              </div>
+              <div class="tech-stack">
+                <span class="tech-item">Next.js</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">Tailwind CSS</span>
+                <span class="tech-item">shadcn/ui</span>
+                <span class="tech-item">Prisma ORM</span>
+                <span class="tech-item">TypeScript</span>
+                <span class="tech-item">Vercel Deployment</span>
+              </div>
+              <a href="https://dumy-finance-app.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer" data-en="Visit project" data-fr="Visiter le projet" data-ua="Відвідати проект" data-de="Projekt besuchen">
+                Visit project
+              </a>
+            </div>
+          </div>
+        </div>
+
+<div class="container_second">
+  <section>
+    <h2 data-en="Education" data-fr="Éducation" data-ua="Освіта" data-de="Bildung">Education</h2>
+
+    <h3>
+      <img class="education_img" src="/img/ula.jpg" alt="">
+      <a class="content__link" href="https://ual.ua/en" 
+        data-en="ULA, a program based on Israeli military model" 
+        data-fr="ULA, un programme basé sur le modèle militaire israélien" 
+        data-ua="ULA — програма, заснована на ізраїльській військовій моделі" 
+        data-de="ULA, ein Programm basierend auf dem israelischen Militärmodell">
+        ULA, a program based on Israeli military model
+      </a>
+      <h4>2019 - 2020</h4>
+      <h4>Kharkiv <img class="location_icon" src="/img/location_icon.svg" alt=""> Ukraine</h4>
+    </h3>
+
+    <h3>
+      <img class="education_img" src="/img/dragomanova.jpeg" alt="">
+      <a class="content__link" href="https://if.isuo.org/schools/view/id/10935" 
+        data-en="Psychology Bachelor's at Drahomanov University" 
+        data-fr="Licence en psychologie à l’Université Drahomanov" 
+        data-ua="Бакалавр психології в університеті імені Драгоманова" 
+        data-de="Psychologie-Bachelor an der Drahomanov-Universität">
+        Psychology Bachelor's at Drahomanov University
+      </a>
+      <h4>2020 - 2021</h4>
+      <h4>Kyiv <img class="location_icon" src="/img/location_icon.svg" alt=""> Ukraine</h4>
+    </h3>
+
+    <h3>
+      <img class="education_img" src="/img/auk.jpg" alt="">
+      <a class="content__link" href="https://if.isuo.org/schools/view/id/10935" 
+        data-en="Management Bachelor's Program at AUK" 
+        data-fr="Licence en management à l’AUK" 
+        data-ua="Бакалаврат з менеджменту в AUK" 
+        data-de="Management-Bachelorstudium an der AUK">
+        Management Bachelor's Program at AUK
+      </a>
+      <h4>2021 - 2023</h4>
+      <h4>Kyiv <img class="location_icon" src="/img/location_icon.svg" alt=""> Ukraine</h4>
+    </h3>
+
+    <h3>
+      <img class="education_img" src="/img/mate_academy_icon.png" alt="">
+      <a class="content__link" href="https://mate.academy" 
+        data-en="Mate Academy Full-Stack Developer Program" 
+        data-fr="Programme Développeur Full-Stack à Mate Academy" 
+        data-ua="Програма Full-Stack розробника в Mate Academy" 
+        data-de="Full-Stack-Entwicklerprogramm bei Mate Academy">
+        Mate Academy Full-Stack Developer Program
+      </a>
+      <h4>2023 - 2024</h4>
+      <h4>Online <img class="location_icon" src="/img/location_icon.svg" alt=""></h4>
+    </h3>
+
+
+    <h3>
+      <img class="education_img" src="/img/unine.jpg" alt="">
+      <a class="content__link" href="https://www.unine.ch/ilcf/" 
+         data-en="French Language and Civilization" 
+         data-fr="Langue et civilisation françaises" 
+         data-ua="Мова та франкофонська культура" 
+         data-de="Französische Sprache und Zivilisation">
+         French Language and Civilization
+      </a>
+      <h4 
+        data-en="2025 - Ongoing" 
+        data-fr="2025 - En cours" 
+        data-ua="2025 - Триває" 
+        data-de="2025 - Laufend">2025 - Ongoing
+      </h4>
+
+      <h4>Neuchâtel <img class="location_icon" src="/img/location_icon.svg" alt=""> Switzerland</h4>
+    </h3>
+
+  </section>
+    <div class="languages">
+      <div class="language-pair">
+        <img class="ukrainian" src="/img/ukrainian_flag.png" alt="Ukrainian Flag">
+        <p data-en="Native" data-fr="Natif" data-ua="Рідна" data-de="Muttersprache">Native</p>
       </div>
 
-      <div>
-        <div class="container_first">
-          <section class="programming">
-            <h2 data-en="Programming education" data-fr="Formation en programmation" data-ua="Програмування">Programming education</h2>
-            <h4 data-en="APR 2023 - DEC 2024" data-fr="AVR 2023 - DÉC 2024" data-ua="КВІ 2023 - ГРУ 2024">APR 2023 - DEC 2024</h4>
-            <h3>
-              <span class="popup-text" data-en="I finished the course, completing the themes: JS, TS, HTML, CSS, SCSS, working with Git, DOM, React, Redux, Vue, Angular, SQL, Docker, Data structures and SOLID principles, SCRUM methodology and working with JIRA"
-                    data-fr="J'ai terminé le cours, en complétant les thèmes : JS, TS, HTML, CSS, SCSS, travail avec Git, DOM, React, Redux, Vue, Angular, SQL, Docker, structures de données et principes SOLID, méthodologie SCRUM et travail avec JIRA"
-                    data-ua="Я завершив курс, вивчаючи теми: JS, TS, HTML, CSS, SCSS, робота з Git, DOM, React, Redux, Vue, Angular, SQL, Docker, структури даних та принципи SOLID, методологія SCRUM та робота з JIRA">
-                I finished the course, completing the themes: JS, TS, HTML, CSS, SCSS, working with Git, DOM, React, Redux, Vue, Angular, SQL, Docker, Data structures and SOLID principles, SCRUM methodology and working with JIRA
-              </span>
-              <a class="content__link" href="https://mate.academy/en/courses/fullstack" data-en="-MateAcademy, FullStack" data-fr="-MateAcademy, FullStack" data-ua="-MateAcademy, FullStack">-MateAcademy, FullStack</a>
-            </h3>
+      <div class="language-pair">
+        <img class="english" src="/img/english_flag.png" alt="English Flag">
+        <p data-en="C1" data-fr="C1" data-ua="C1" data-de="C1">C1</p>
+      </div>
 
-            <h4 data-en="DÉC 2020 - JAN 2023" data-fr="DÉC 2020 - JAN 2023" data-ua="ГРУ 2020 - СІЧ 2023">DÉC 2020 - JAN 2023</h4>
-            <h3 data-en="FreeCodeCamp:" data-fr="FreeCodeCamp:" data-ua="FreeCodeCamp:">FreeCodeCamp:</h3>
-            <p>
-              <a class="content__link" href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8" data-en="-> Front End Development Libraries" data-fr="-> Bibliothèques de développement front-end" data-ua="-> Бібліотеки для фронтенд-розробки">-> Front End Development Libraries</a>
-            </p>
-            <p>
-              <a class="content__link" href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8" data-en="-> Relational Database" data-fr="-> Base de données relationnelle" data-ua="-> Реляційні бази даних">-> Relational Database</a>
-            </p>
-            <p>
-              <a class="content__link" href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8" data-en="-> JavaScript Algorithms and Data Structures" data-fr="-> Algorithmes et structures de données en JavaScript" data-ua="-> Алгоритми та структури даних на JavaScript">-> JavaScript Algorithms and Data Structures</a>
-            </p>
-          </section>
+      <div class="language-pair">
+        <img class="french" src="/img/french_flag.webp" alt="French Flag">
+        <p data-en="B2" data-fr="B2" data-ua="B2" data-de="B2">B2</p>
+      </div>
 
-          <div class="info">
-            <img class="phone_icon" src="/img/phone_icon.svg"><h3 data-en="+380 63 94 740 24" data-fr="+380 63 94 740 24" data-ua="+380 63 94 740 24">+380 63 94 740 24</h3>
-            <img class="location_icon" src="/img/location_icon.svg"><h3 data-en="Neuchatel 2000, Rue du Seyon 25" data-fr="Neuchatel 2000, Rue du Seyon 25" data-ua="Невшатель 2000, Rue du Seyon 25">Neuchatel 2000, Rue du Seyon 25</h3>
-            <img class="email_icon" src="/img/email_icon.svg"><h3 data-en="maksym.karashevskyi@gmail.com" data-fr="maksym.karashevskyi@gmail.com" data-ua="maksym.karashevskyi@gmail.com">maksym.karashevskyi@gmail.com</h3>
-          </div>
-        </div>
+      <div class="language-pair">
+        <img class="german" src="/img/german_flag.webp" alt="German Flag">
+        <p data-en="A2" data-fr="A2" data-ua="A2" data-de="A2">A2</p>
+      </div>
+  </div>
+</div>
 
-        <div class="container_second">
-          <section>
-            <h2 data-en="Education" data-fr="Éducation" data-ua="Освіта">Education</h2>
-            <h4 data-en="SEP 2008 - MAY 2017" data-fr="SEP 2008 - MAI 2017" data-ua="ВЕР 2008 - ТРА 2017">SEP 2008 - MAY 2017</h4>
-            <h3>
-              <a class="content__link" href="https://if.isuo.org/schools/view/id/10935" data-en="Primary and secondary school in Sopiv" data-fr="École primaire et secondaire à Sopiv" data-ua="Початкова та середня школа в Сопові">Primary and secondary school in Sopiv</a>
-              <span class="popup-text" data-en="Studied in a small mountain village school in Western Ukraine, but in the 9th year decided to go to the best specialized school in the nearest town."
-                    data-fr="Étudié dans une petite école de village de montagne dans l'ouest de l'Ukraine, mais en 9e année a décidé d'aller à la meilleure école spécialisée de la ville la plus proche."
-                    data-ua="Навчався у невеликій гірській сільській школі на заході України, але на 9-му році навчання вирішив перейти до найкращої спеціалізованої школи у найближчому місті.">
-                Studied in a small mountain village school in Western Ukraine, but in the 9th year decided to go to the best specialized school in the nearest town.
-              </span>
-            </h3>
-
-            <h4 data-en="SEP 2008 - MAY 2017" data-fr="SEP 2008 - MAI 2017" data-ua="ВЕР 2008 - ТРА 2017">SEP 2008 - MAY 2017</h4>
-            <h3>
-              <a class="content__link" href="https://if.isuo.org/schools/view/id/10906" data-en="Specialized school №1 in Kolomyia" data-fr="École spécialisée №1 à Kolomyia" data-ua="Спеціалізована школа №1 в Коломиї">Specialized school №1 in Kolomyia</a>
-              <span class="popup-text" data-en="The school specialized in English language."
-                    data-fr="L'école était spécialisée en langue anglaise."
-                    data-ua="Школа спеціалізувалася на вивченні англійської мови.">
-                The school specialized in English language.
-              </span>
-            </h3>
-
-            <h4 data-en="SEP 2019 - JAN 2020" data-fr="SEP 2019 - JAN 2020" data-ua="ВЕР 2019 - СІЧ 2020">SEP 2019 - JAN 2020</h4>
-            <h3>
-              <a class="content__link" href="https://www.ulafoundationofcanada.com/" data-en="Ukrainian Leadership Academy in Kharkiv" data-fr="Académie ukrainienne de leadership à Kharkiv" data-ua="Українська академія лідерства у Харкові">Ukrainian Leadership Academy in Kharkiv</a>
-              <span class="popup-text" data-en="Program based on military training in Israel but with more intellectual aspects."
-                    data-fr="Programme basé sur la formation militaire en Israël mais avec des aspects plus intellectuels."
-                    data-ua="Програма, заснована на військовій підготовці в Ізраїлі, але з більш інтелектуальними аспектами.">
-                Program based on military training in Israel but with more intellectual aspects.
-              </span>
-            </h3>
-
-            <h4 data-en="SEP 2020 - MAY 2021" data-fr="SEP 2020 - MAI 2021" data-ua="ВЕР 2020 - ТРА 2021">SEP 2020 - MAY 2021</h4>
-            <h3>
-              <a class="content__link" href="https://if.isuo.org/schools/view/id/10935" data-en="Drahomanov National Pedagogical University in Kyiv" data-fr="Université pédagogique nationale Drahomanov à Kiev" data-ua="Національний педагогічний університет імені Драгоманова у Києві">Drahomanov National Pedagogical University in Kyiv</a>
-              <span class="popup-text" data-en="At the time, I wanted to become a psychotherapist, inspired by Viktor Frankl, but eventually, I discovered that the best thing I could do as a psychotherapist is prevention, not healing. With that in mind, I gave my full attention to media platforms, which combined had about 80k followers, and got a job as a barista/manager in my friend's beauty salon."
-                    data-fr="À l'époque, je voulais devenir psychothérapeute, inspiré par Viktor Frankl, mais finalement, j'ai découvert que la meilleure chose que je pouvais faire en tant que psychothérapeute était la prévention, pas la guérison. Avec cela à l'esprit, j'ai donné toute mon attention aux plateformes médiatiques, qui comptaient environ 80 000 abonnés, et j'ai obtenu un emploi de barista/gérant dans le salon de beauté de mon ami."
-                    data-ua="На той час я хотів стати психотерапевтом, натхненний Віктором Франклом, але згодом я зрозумів, що найкраще, що я можу робити як психотерапевт, це запобігання, а не лікування. З цим на думці я зосередився на медіаплатформах, які разом мали близько 80 тисяч підписників, і отримав роботу бариста/менеджера в салоні краси мого друга.">
-                At the time, I wanted to become a psychotherapist, inspired by Viktor Frankl, but eventually, I discovered that the best thing I could do as a psychotherapist is prevention, not healing. With that in mind, I gave my full attention to media platforms, which combined had about 80k followers, and got a job as a barista/manager in my friend's beauty salon.
-              </span>
-            </h3>
-
-            <h4 data-en="SEP 2022 - MAY 2023" data-fr="SEP 2022 - MAI 2023" data-ua="ВЕР 2022 - ТРА 2023">SEP 2022 - MAY 2023</h4>
-            <h3>
-              <a class="content__link" href="https://if.isuo.org/schools/view/id/10935" data-en="AUK - American University in Kyiv" data-fr="AUK - Université américaine à Kyiv" data-ua="АУК - Американський університет у Києві">AUK - American University in Kyiv</a>
-              <span class="popup-text" data-en="With the goal of going to the USA, I enrolled in a branch of Arizona State University in Kyiv, but due to new laws, it became impossible to leave the country."
-                    data-fr="Avec l'objectif d'aller aux États-Unis, je me suis inscrit à une branche de l'Université d'État de l'Arizona à Kyiv, mais en raison de nouvelles lois, il est devenu impossible de quitter le pays."
-                    data-ua="З метою поїздки до США я вступив до філії Університету штату Аризона в Києві, але через нові закони стало неможливо виїхати з країни.">
-                With the goal of going to the USA, I enrolled in a branch of Arizona State University in Kyiv, but due to new laws, it became impossible to leave the country.
-              </span>
-            </h3>
-          </section>
-
-          <div class="languages">
-            <img class="ukrainian" src="/img/ukrainian_flag.png">
-            <p data-en="Native" data-fr="Natif" data-ua="Рідна">Native</p>
-            <img class="english" src="/img/english_flag.png">
-            <p data-en="C1" data-fr="C1" data-ua="C1">C1</p>
-            <img class="french" src="/img/french_flag.webp">
-            <p data-en="B2" data-fr="B2" data-ua="B2">B2</p>
-            <img class="german" src="/img/german_flag.webp">
-            <p data-en="A2" data-fr="A2" data-ua="A2">A2</p>
-          </div>
-        </div>
-
-        <div class="container_third">
-          <section>
-            <h2 data-en="Projects" data-fr="Projets" data-ua="Проєкти">Projects</h2>
-            <h3>
-              <a class="content__link" href="https://q1w2e3r4t5y6u7i8a.github.io/react_phone-catalog/" data-en="React-based website" data-fr="Site web basé sur React" data-ua="Веб-сайт на React">React-based website</a>
-            </h3>
-            <h3>
-              <a class="content__link" href="" data-en="Personal financial app" data-fr="Application financière personnelle" data-ua="Особистий фінансовий додаток">Personal financial app</a>
-            </h3>
-            <h3>
-              <a class="content__link" href="" data-en="Bookcrossing app" data-fr="Application Bookcrossing" data-ua="Додаток для буккроссингу">Bookcrossing app</a>
-            </h3>
-          </section>
-
-          <div class="social_media">
-            <a href="https://www.instagram.com/makarkarma/?hl=en">
-              <img class="instagram" src="/img/instagram_logo.webp" alt="Instagram">
-            </a>
-            <a href="https://t.me/makarkarma">
-              <img class="telegram" src="/img/telegram_logo.jfif" alt="Telegram">
-            </a>
-            <a href="https://api.whatsapp.com/qr/5IAOPCL5QMVCA1?autoload=1&app_absent=0">
-              <img class="whatsUp" src="/img/whatsUp_logo.jfif" alt="WhatsApp">
-            </a>
-            <a href="https://github.com/Q1W2E3R4T5Y6U7I8a">
-              <img class="github" src="/img/github_logo.svg" alt="GitHub">
-            </a>
-          </div>
-        </div>
+    </div>
 
         <div class="container_fourth">
-          <section>
-            <h2 data-en="Work" data-fr="Travail" data-ua="Робота">Work</h2>
-            <h4 data-en="SEP 2024 - Today" data-fr="SEP 2024 - Aujourd'hui" data-ua="ВЕР 2024 - Зараз">SEP 2024 - Today</h4>
-            <h3>
-              <span data-en="Angular developer at Schoolify" data-fr="Développeur Angular chez Schoolify" data-ua="Angular розробник у Schoolify">Angular developer at Schoolify</span>
-              <span class="popup-text" data-en="Me and my friend are working on an application that universities and schools could use. I am concentrated on the frontend, he is on the Java backend."
-                    data-fr="Mon ami et moi travaillons sur une application que les universités et les écoles pourraient utiliser. Je me concentre sur le frontend, lui sur le backend Java."
-                    data-ua="Ми з другом працюємо над додатком, який могли б використовувати університети та школи. Я займаюся фронтендом, він - Java бекендом.">
-                Me and my friend are working on an application that universities and schools could use. I am concentrated on the frontend, he is on the Java backend.
-              </span>
-            </h3>
+          <section class="work-section">
+            <h2 data-en="Work" data-fr="Travail" data-ua="Робота" data-de="Arbeit">Work</h2>
 
-            <h4 data-en="DÉC 2020 - JAN 2023" data-fr="DÉC 2020 - JAN 2023" data-ua="ГРУ 2020 - СІЧ 2023">DÉC 2020 - JAN 2023</h4>
-            <h3 data-en="Barista/English teacher/Small business owner" data-fr="Barista/Professeur d'anglais/Propriétaire d'une petite entreprise" data-ua="Бариста/Викладач англійської/Власник невеликого бізнесу">Barista/English teacher/Small business owner</h3>
+            <h4 data-en="2020 - 2024" data-fr="2020 - 2024" data-ua="2020 - 2024" data-de="2020 - 2024">2020 - 2024</h4>
+            <h3 data-en="Small businesses owner" data-fr="Propriétaire de petites entreprises" data-ua="Власник малих бізнесів" data-de="Inhaber kleiner Unternehmen">Small businesses owner</h3>
           </section>
 
-          <h3 class="about">
-            <a href="ps_portrait.html" 
-            data-en="Psychological portrait" 
-            data-fr="Portrait psychologique" 
-            data-ua="Психологічний портрет">Psychological portrait</a>
-          </h3>
+          <div class="cat-container">
+            <div class="cat">
+              <img src="/img/cute_cat_no_pupils.png" alt="Cute Cat" class="cat-image">
+              <div class="eyes">
+                <div class="eye">
+                  <div class="pupil"></div>
+                </div>
+                <div class="eye">
+                  <div class="pupil"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <h3 class="about">
+            <a  class="portrait-link" href="ps_portrait.html" 
+            data-en="Psychological portrait" 
+            data-fr="Portrait psychologique" 
+            data-ua="Психологічний портрет"
+            data-de="Psychologisches Porträt">Psychological portrait</a>
+      </h3>
+
+      <p> <a class="privacy-link" href="https://docs.google.com/document/d/1qtyXxJGFgq5hNVgCvrUHruZzvIJ4N1UfCZOEo7ik_oE/edit?usp=sharing">privacy policy</a></p>
+    </div>  
+
+    <canvas id="interactive-lines"></canvas>
+    <script src="scripts/components/canvas.js"></script>
+
   </body>
 </html>

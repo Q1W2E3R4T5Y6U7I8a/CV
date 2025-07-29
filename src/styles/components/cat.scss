@@ -1,0 +1,68 @@
+@import '../variables';
+
+.cat-container {
+  position: fixed;
+  bottom: -100px;
+  right: 3rem;
+  width: 20rem;
+  z-index: 100;
+  transition: all 0.5s ease;
+  
+  
+  @media (max-width: 768px) {
+    display: none;
+    width: 15rem;
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+
+.cat-image {
+  width: 300px;
+  height: 300px;
+  display: block;
+}
+
+/* Eyes Positioning */
+.eyes {
+  position: absolute;
+  top: 12.5%; /* Adjust based on your cat image */
+  left: 75%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px; /* Space between eyes */
+}
+
+/* Eye Whites */
+.eye {
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pupils - Initially Centered */
+.pupil {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: black;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Perfect center */
+  transition: transform 0.05s linear;
+}
+
+/* Blinking Animation */
+@keyframes blink {
+  0%, 96% { height: 6px; }
+  98%, 100% { height: 1px; }
+}
+
+.eye {
+  animation: blink 5s infinite;
+}

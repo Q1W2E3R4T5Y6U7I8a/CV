@@ -1,0 +1,105 @@
+@import '../variables';
+
+
+.language_section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 4rem 0;
+  
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+
+
+.ukrainian, .english, .german, .french {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  object-fit: cover;
+  border: 0.3rem solid $white;
+  box-shadow: 0 0.5rem 1rem rgba($black, 0.1);
+  
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0.8rem 1.5rem rgba($black, 0.2);
+  }
+}
+.change_language {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    margin-bottom: 0;
+  }
+  
+  &_en, &_fr, &_ua, &_de {
+    font-size: 2.8rem;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background: $gray-light;
+    color: $gray-dark;
+    
+    &:hover {
+      background: $primary-blue;
+      color: $white;
+    }
+    
+    &.active {
+      background: $primary-yellow;
+      color: $black;
+      font-weight: 700;
+    }
+  }
+}
+
+.language_section {
+  @media (max-width: 768px) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+  }
+}
+
+.language_item {
+  @media (max-width: 768px) {
+    flex: 0 0 auto; // prevent shrinking
+  }
+}
+
+.ukrainian, .english, .german, .french {
+  @media (max-width: 768px) {
+    height: 3rem; // half size
+    width: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  .languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: 15px;
+    justify-content: center;
+  }
+
+  .language-pair {
+    flex: 0 0 30%;  // each pair takes about 30%, so 3 fit per row
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

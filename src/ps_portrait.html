@@ -1,29 +1,485 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Psychologie portait</title>
-    <link rel="stylesheet" href="./styles/main.scss" />
-    <script src="scripts/main.js" defer></script>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Psychological Portrait - Maksym Karashevskyi</title>
+  <link rel="icon" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/components/canvas.scss" />
+  <style>
+    :root {
+      --primary: #2c3e50;
+      --secondary: #3498db;
+      --accent: #5DB4E8;
+      --light: #ecf0f1;
+      --dark: #2c3e50;
+      --gray: #95a5a6;
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+    
+    .language-selector {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .lang-btn {
+      background: #FFB908;
+      border: none;
+      color: rgb(0, 0, 0);
+      border-radius: 4px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    
+    .lang-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+    
+    .portrait-link {
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px white;
+      display: inline-block;
+    }
+    
+    .portrait-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 2px 10px black;
+    }
+    
+    .privacy-link {
+      color: var(--light);
+      text-decoration: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+    
+    .privacy-link:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+    
+    .portrait-title {
+      text-align: center;
+      margin: 30px 0;
+      color: white;
+      font-size: 2.8rem;
+      font-family: 'Montserrat', sans-serif;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .portrait-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    
+    .portrait-card {
+      
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .portrait-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--secondary);
+    }
+    
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    .card-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--dark);
+      font-family: 'Montserrat', sans-serif;
+    }
+    
+    .card-content {
+      flex: 1;
+    }
+    
+    .settings-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .compass-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+    
+    .compass-img:hover {
+      transform: scale(1.03);
+    }
+    
+    .personality-result {
+      background: linear-gradient(135deg, #3498db, #2c3e50);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .hobby-item {flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      background: var(--light);
+      padding: 15px;
+      border-radius: 10px;
+      transition: var(--transition);
+    }
+    
+    .hobby-item:hover {
+      transform: translateX(5px);
+      background: var(--secondary);
+      color: white;
+    }
+    
+    .hobby-icon {
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
+    
+    .other-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .other-item {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .other-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .other-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 10px;
+    }
+    
+    .other-label {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-top: 5px;
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .portrait-title {
+        font-size: 2.2rem;
+      }
+      
+      .other-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hobbies-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-  <body>
-    <h1>Текст про мене/мотиваційний лист</h1>
-    <h2>Тести IQ/16Pers/Political compass</h2>
-    <h3>Список захоплень</h3>
-
-    <!-- Cute cat -->
-    <div class="cat">
-      <img src="/img/cute_cat_no_pupils.png" alt="Cute cat">
-      <div class="eyes">
-        <div class="eye">
-          <div class="pupil"></div>
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="language-selector">
+        <button class="lang-btn change_language_en">EN</button>
+        <button class="lang-btn change_language_fr">FR</button>
+        <button class="lang-btn change_language_ua">UA</button>
+        <button class="lang-btn change_language_de">DE</button>
+      </div>
+      
+      <a class="portrait-link" href="index.html" 
+         data-en="Back to CV" 
+         data-fr="Retour au CV" 
+         data-ua="Назад до резюме" 
+         data-de="Zurück zum Lebenslauf">Back to CV</a>
+    </div>
+    
+    <div class="portrait-grid">
+      <!-- Settings Card -->
+      <div class="portrait-card">
+        <div class="card-header">
+          <div class="card-icon">😊</div>
+          <h2 class="card-title" 
+          data-en="About" 
+          data-fr="À propos" 
+          data-ua="Про себе" 
+          data-de="Über mich">About </h2>
         </div>
-        <div class="eye">
-          <div class="pupil"></div>
+        <div class="card-content">
+          <p class="settings-text" data-en="Highly motivated and responsible person who desires to apply gained skills in Full-Stack development. Ready to work on already existing projects but new ones are preferable. Can work on-site as well as remotely. Have good problem-solving and decision-making skills that help me to meet deadlines. Friendly, kind, love hard-working, flexible, good in cooperating, ready to learn something new." 
+             data-fr="Personne hautement motivée et responsable qui souhaite appliquer les compétences acquises en développement Full-Stack. Prêt à travailler sur des projets existants, mais les nouveaux sont préférables. Peut travailler sur site ou à distance. Possède de bonnes compétences en résolution de problèmes et en prise de décision qui m'aident à respecter les délais. Amical, gentil, aime travailler dur, flexible, bon en coopération, prêt à apprendre de nouvelles choses." 
+             data-ua="Високомотиваційна та відповідальна особа, яка бажає застосувати набуті навички у Full-Stack розробці. Готовий працювати над існуючими проектами, але нові є переважними. Можу працювати як на місці, так і віддалено. Маю хороші навички вирішення проблем та прийняття рішень, які допомагають мені дотримуватися дедлайнів. Дружелюбний, добрий, люблю працювати наполегливо, гнучкий, добре співпрацюю, готовий вчитися новому." 
+             data-de="Hochmotivierte und verantwortungsbewusste Person, die erworbene Fähigkeiten in der Full-Stack-Entwicklung anwenden möchte. Bereit, an bestehenden Projekten zu arbeiten, aber neue sind vorzuziehen. Kann vor Ort oder remote arbeiten. Verfügt über gute Problemlösungs- und Entscheidungsfähigkeiten, die mir helfen, Fristen einzuhalten. Freundlich, nett, liebt harte Arbeit, flexibel, gut in der Zusammenarbeit, bereit, Neues zu lernen.">
+            Highly motivated and responsible person who desires to apply gained skills in Full-Stack development. Ready to work on already existing projects but new ones are preferable. Can work on-site as well as remotely. Have good problem-solving and decision-making skills that help me to meet deadlines. Friendly, kind, love hard-working, flexible, good in cooperating, ready to learn something new.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Political Compass Card -->
+      <div class="portrait-card">
+        <div class="card-header">
+          <div class="card-icon">🗳️</div>
+          <h2 class="card-title" data-en="Political Compass" 
+              data-fr="Boussole Politique" 
+              data-ua="Політичний Компас" 
+              data-de="Politischer Kompass">Political Compass</h2>
+        </div>
+        <div class="card-content">
+
+
+          <img src="/img/political_compas.jpg" alt="Political Compass" class="compass-img">
+        </div>
+      </div>
+      
+      <!-- 16 Personalities Card -->
+      <div class="portrait-card">
+    <div class="card-header">
+    <div class="card-icon">🧠</div>
+    <h2 class="card-title" 
+        data-en="Psychological type" 
+        data-fr="Type psychologique" 
+        data-ua="Психологічний тип" 
+        data-de="Psychologischer Typ">
+      Psychological type
+    </h2>
+  </div>
+  <div class="card-content">
+    <p data-en="My personality type according to the 16 Personalities framework:" 
+       data-fr="Mon type de personnalité selon le cadre des 16 personnalités :" 
+       data-ua="Мій тип особистості за системою 16 Особистостей:" 
+       data-de="Mein Persönlichkeitstyp nach dem 16-Persönlichkeiten-Modell:">
+      My personality type according to the 16 Personalities framework:
+    </p>
+
+    <div class="personality-result" 
+         data-en="ENTJ (Extroverted, Intuitive, Thinking, Judging)" 
+         data-fr="ENTJ (Extraverti, Intuitif, Pensée, Jugement)" 
+         data-ua="ENTJ (Екстраверт, Інтуїція, Мислення, Судження)" 
+         data-de="ENTJ (Extravertiert, Intuitiv, Denkend, Urteilend)">
+      ENTJ (Extroverted, Intuitive, Thinking, Judging)
+    </div>
+
+    <p style="margin-top: 20px;" 
+       data-en="Strategic, confident, and focused on efficiency and results." 
+       data-fr="Stratégique, confiant et axé sur l'efficacité et les résultats." 
+       data-ua="Стратегічний, впевнений у собі, орієнтований на ефективність та результат." 
+       data-de="Strategisch, selbstbewusst und auf Effizienz sowie Ergebnisse fokussiert.">
+      Strategic, confident, and focused on efficiency and results.
+    </p>
+  </div>
+</div>
+
+      
+      <!-- Hobbies Card -->
+      <div class="portrait-card">
+        <div class="card-header">
+          <div class="card-icon">🎯</div>
+          <h2 class="card-title" data-en="Hobbies & Interests" 
+              data-fr="Loisirs & Intérêts" 
+              data-ua="Хобі та Інтереси" 
+              data-de="Hobbys & Interessen">Hobbies & Interests</h2>
+        </div>
+        <div class="card-content">
+          <div class="hobbies-grid">
+            <div class="hobby-item">
+              <div class="hobby-icon">🎸</div>
+              <div data-en="Guitar" data-fr="Guitare" data-ua="Гітара" data-de="Gitarre">Guitar</div>
+            </div>
+           <div class="hobby-item">
+  <div class="hobby-icon">♟️</div>
+  <div class="hobby-text">
+    <span class="lang-text"
+      data-en="Chess"
+      data-fr="Échecs"
+      data-ua="Шахи"
+      data-de="Schach">Chess</span>
+    <span class="elo-text"
+      data-en="(ELO of top 0.1%)"
+      data-fr="(Classement ELO dans le top 0,1 %)"
+      data-ua="(ELO у топі 0,1 %)"
+      data-de="(ELO unter den besten 0,1 %)">(ELO of top 0.1%)</span>
+  </div>
+</div>
+
+
+            <div class="hobby-item">
+              <div class="hobby-icon">🎮</div>
+              <div data-en="Video Games" data-fr="Jeux Vidéo" data-ua="Відеоігри" data-de="Videospiele">Video Games</div>
+            </div>
+            <div class="hobby-item">
+              <div class="hobby-icon">📚</div>
+              <div data-en="Writing/Reading" data-fr="Écriture/Lecture" data-ua="Письмо/Читання" data-de="Schreiben/Lesen">Writing/Reading</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Other Info Card -->
+      <div class="portrait-card">
+        <div class="card-header">
+          <div class="card-icon">🔍</div>
+          <h2 class="card-title" data-en="Additional Insights" 
+              data-fr="Informations Supplémentaires" 
+              data-ua="Додаткові Інсайти" 
+              data-de="Zusätzliche Einblicke">Additional Insights</h2>
+        </div>
+        <div class="card-content">
+          <div class="other-grid">
+            <div class="other-item">
+              <div data-en="IQ Score" data-fr="Score de QI" data-ua="Рівень IQ" data-de="IQ-Wert">IQ Score</div>
+              <div class="other-value">115</div>
+            <div class="other-item">
+              <div data-en="Temperament" data-fr="Tempérament" data-ua="Темперамент" data-de="Temperament">Temperament</div>
+              <div class="other-value" data-en="Sanguine-Phlegmatic" 
+                   data-fr="Sanguin-Flegmatique" 
+                   data-ua="Сангвінік-Флегматик" 
+                   data-de="Sanguinisch-Phlegmatisch">Sanguine-Phlegmatic</div>
+              <div class="other-label" data-en="Balanced & Adaptable" 
+                   data-fr="Équilibré & Adaptable" 
+                   data-ua="Збалансований та Адаптивний" 
+                   data-de="Ausgeglichen & Anpassungsfähig">Balanced & Adaptable</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+  <script>
+    // Language switching functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const langButtons = document.querySelectorAll('.lang-btn');
+      const langElements = document.querySelectorAll('[data-en], [data-fr], [data-ua], [data-de]');
+      
+      // Set initial language (English)
+      setLanguage('en');
+      
+      langButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const lang = button.classList.contains('change_language_en') ? 'en' :
+                       button.classList.contains('change_language_fr') ? 'fr' :
+                       button.classList.contains('change_language_ua') ? 'ua' :
+                       button.classList.contains('change_language_de') ? 'de' : 'en';
+          setLanguage(lang);
+        });
+      });
+      
+      function setLanguage(lang) {
+        langElements.forEach(element => {
+          if (element.dataset[lang]) {
+            element.textContent = element.dataset[lang];
+          }
+        });
+      }
+    });
+  </script>
+
+      <canvas id="interactive-lines"></canvas>
+    <script src="scripts/components/canvas.js"></script>
+</body>
 </html>
